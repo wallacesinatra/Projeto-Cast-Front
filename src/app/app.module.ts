@@ -3,16 +3,41 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ConsultarCursoComponent } from './consultar-curso/consultar-curso.component';
+import { EditarCursoComponent } from './editar-curso/editar-curso.component';
+import { CadastrarCursoComponent } from './cadastrar-curso/cadastrar-curso.component';
+import { RouterModule, Routes } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
+
+const routes: Routes= [
+
+  {path: 'cadastrar-curso', component: CadastrarCursoComponent},
+  {path: 'consultar-curso', component: ConsultarCursoComponent},
+  {path: 'editar-curso/:id', component: EditarCursoComponent}
+  
+]
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ConsultarCursoComponent,
+    EditarCursoComponent,
+    CadastrarCursoComponent
   ],
+  
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(routes),
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

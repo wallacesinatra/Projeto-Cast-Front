@@ -1,0 +1,77 @@
+<h5>Edição do curso</h5>
+<p>Utilize os campos para alterar os dados do curso</p>
+
+<form [formGroup]="formEdicao" (ngSubmit)=" onSubmit()">
+
+    <div *ngIf="mensagem" class="mb-3 alert alert-primary">
+        <strong>{{mensagem}}</strong>
+    </div>
+
+    <!--campo oculto-->
+    <input type="hidden" formControlName="idCurso" />
+
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label for="">descricao</label>
+            <input type="text" class="form-control" formControlName="descricao">
+            <div class="text-danger" *ngIf="form.descricao.touched && form.descricao.invalid">
+                <span *ngIf="form.descricao.errors.required">
+                    Informe a descricao
+                </span>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <label for="">Data de Inicio</label>
+            <input type="date" class="form-control" formControlName="dataIni">
+            <div class="text-danger" *ngIf="form.dataIni.touched && form.dataIni.invalid">
+                <span *ngIf="form.dataIni.errors.required">
+                    Informe a data de Inicio
+                </span>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <label for="">Data de Termino</label>
+            <input type="date" class="form-control" formControlName="dataTer">
+            <div class="text-danger" *ngIf="form.dataTer.touched && form.dataTer.invalid">
+                <span *ngIf="form.dataTer.errors.required">
+                    Informe a data de Termino
+                </span>
+            </div>
+        </div>
+
+
+        <div class="col-md-3">
+            <label for="">quantidade de alunos</label>
+            <input type="text" class="form-control" formControlName="quantidade">
+            <div class="text-danger" *ngIf="form.quantidade.touched && form.quantidade.invalid">
+                <span *ngIf="form.quantidade.errors.required">
+                    Informe a quantidade de alunos
+                </span>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <label for="">categoria</label>
+            <select class="form-control" formControlName="categoria" id="idCategoria">
+                <option value="1">Multiplataforma</option>
+                <option value="2">Banco de dados</option>
+                <option value="3">Metodologia</option>
+                <option value="4">Comportamento</option>
+                <option value="5">Comunicacao</option>
+              </select>
+            <div class="text-danger" *ngIf="form.categoria.touched && form.categoria.invalid">
+                <span *ngIf="form.categoria.errors.required">
+                    Informe a categoria
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-12">
+            <input type="submit" [disabled]="!formEdicao.valid" class="btn btn-success" value="Salvar Alterações" />
+        </div>
+    </div>
+</form>
