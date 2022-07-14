@@ -14,12 +14,10 @@ import { HomeComponent } from './home/home.component';
 
 
 const routes: Routes= [
-
+  {path: '', component: HomeComponent},
   {path: 'cadastrar-curso', component: CadastrarCursoComponent},
   {path: 'consultar-curso', component: ConsultarCursoComponent},
   {path: 'editar-curso/:id', component: EditarCursoComponent},
-  {path: '', component: HomeComponent},
-  
 ]
 
 @NgModule({
