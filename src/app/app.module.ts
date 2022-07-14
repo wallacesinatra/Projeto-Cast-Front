@@ -9,13 +9,16 @@ import { CadastrarCursoComponent } from './cadastrar-curso/cadastrar-curso.compo
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
+
 
 
 const routes: Routes= [
 
   {path: 'cadastrar-curso', component: CadastrarCursoComponent},
   {path: 'consultar-curso', component: ConsultarCursoComponent},
-  {path: 'editar-curso/:id', component: EditarCursoComponent}
+  {path: 'editar-curso/:id', component: EditarCursoComponent},
+  {path: '', component: HomeComponent},
   
 ]
 
@@ -24,7 +27,9 @@ const routes: Routes= [
     AppComponent,
     ConsultarCursoComponent,
     EditarCursoComponent,
-    CadastrarCursoComponent
+    CadastrarCursoComponent,
+    HomeComponent,
+
   ],
   
   imports: [

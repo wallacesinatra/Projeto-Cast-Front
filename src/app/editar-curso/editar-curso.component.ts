@@ -27,6 +27,7 @@ export class EditarCursoComponent implements OnInit {
 
       },
       (e) => {
+        alert(e.error);
         console.log(e);
       }
 
@@ -59,7 +60,7 @@ export class EditarCursoComponent implements OnInit {
           window.location.href = "/consultar-curso"
         },
         e => {
-
+          alert(e.error);
           this.mensagem = "Ocorreu um erro, a edição não foi realizada."
           console.log(e);
 

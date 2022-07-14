@@ -1,38 +1,84 @@
 <h5>Consulta de Cursos</h5>
 <p>Lista dos cursos cadastrados</p>
 
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <td>Descricao</td>
-            <td>Data de Inicio</td>
-            <td>Data de Termino</td>
-            <td>quantidade de aluno</td>
-            <td>categoria</td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let c of curso">
-            <td>{{c.descricao}}</td>
-            <td>{{c.dataIni|date:'dd/MM/yyyy'}}</td>
-            <td>{{c.dataTer|date:'dd/MM/yyyy'}}</td>
-            <td>{{c.quantidade}}</td>
-            <td>{{c.categoria.categoria}}</td>
+<form [formGroup]="formPeriodoDesc" (ngSubmit)="onSubmit()">
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label for="">Descricao</label>
+            <input type="text" class="form-control" formControlName="descricao">
+            <div class="text-danger" *ngIf="form.descricao.touched && form.descricao.invalid">
+                <span *ngIf="form.descricao.errors.required">
+                    Informe o a descricao do curso
+                </span>
+            </div>
+        </div>
 
-            <td>
-                <button class="btn btn-sm btn-primary mr" [routerLink]="['/editar-curso',c.idCurso]">
-                    Editar
-                </button>
+        <div class="col-md-3">
+            <label for="">Data de Inicio</label>
+            <input type="date" class="form-control" formControlName="dataIni">
+            <div class="text-danger" *ngIf="form.dataIni.touched && form.dataIni.invalid">
+                <span *ngIf="form.dataIni.errors.required">
+                    Informe a data de inicio
+                </span>
+            </div>
+        </div>
 
-                &nbsp;
+        <div class="col-md-3">
+            <label for="">Data de Termino</label>
+            <input type="date" class="form-control" formControlName="dataTer">
+            <div class="text-danger" *ngIf="form.dataTer.touched && form.dataTer.invalid">
+                <span *ngIf="form.dataTer.errors.required">
+                    Informe a data de termino
+                </span>
+            </div>
+        </div>
 
-                <button class="btn btn-sm btn-danger" (click)="excluir(c.idCurso)">Excluir</button>
-            </td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <td colspan="6">Total de registros: {{curso.length}} </td>
-        </tr>
-    </tfoot>
-</table>
+        <div class="row mb-3">
+            <div class="cow-md-6">
+                <input type="submit" class="btn btn-primary" style="margin-top: 15px">
+            </div>
+        </div>
+        <form>
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr class="table-dark">
+                        <td>Descricao</td>
+                        <td>Data de Inicio</td>
+                        <td>Data de Termino</td>
+                        <td>Quantidade de aluno</td>
+                        <td>Categoria</td>
+                        <td>Funções</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let c of curso">
+                        <td>{{c.descricao}}</td>
+                        <td>{{c.dataIni|date:'dd/MM/yyyy'}}</td>
+                        <td>{{c.dataTer|date:'dd/MM/yyyy'}}</td>
+                        <td>{{c.quantidade}}</td>
+                        <td>{{c.categoria.categoria}}</td>
+
+                        <td>
+                            <button class="btn btn-sm btn-primary mr" [routerLink]="['/editar-curso',c.idCurso]">
+                                Editar
+                            </button>
+
+                            &nbsp;
+
+                            <button class="btn btn-sm btn-danger" (click)="excluir(c.idCurso)">Excluir</button>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="6">Total de registros: {{curso.length}} </td>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <input type="submit" class="btn btn-primary" routerLink="" value="retornar">
+                </div>
+            </div>

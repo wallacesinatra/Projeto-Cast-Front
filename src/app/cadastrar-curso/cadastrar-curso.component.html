@@ -8,7 +8,7 @@
     </div>
     <div class="row mb-3">
         <div class="col-md-6">
-            <label for="">descricao</label>
+            <label for="">Descricao</label>
             <input type="text" class="form-control" formControlName="descricao">
             <div class="text-danger" *ngIf="form.descricao.touched && form.descricao.invalid">
                 <span *ngIf="form.descricao.errors.required">
@@ -17,54 +17,71 @@
             </div>
         </div>
 
-        <div class="col-md-3">
-            <label for="">Data de Inicio</label>
-            <input type="date" class="form-control" formControlName="dataIni">
-            <div class="text-danger" *ngIf="form.dataIni.touched && form.dataIni.invalid">
-                <span *ngIf="form.dataIni.errors.required">
-                    Informe a data de inicio
-                </span>
+        <div class="row mb-3">
+            <div class="col-md-3">
+                <label for="">Data de Inicio</label>
+                <input type="date" class="form-control" formControlName="dataIni">
+                <div class="text-danger" *ngIf="form.dataIni.touched && form.dataIni.invalid">
+                    <span *ngIf="form.dataIni.errors.required">
+                        Informe a data de inicio
+                    </span>
+                </div>
             </div>
         </div>
 
-        <div class="col-md-3">
-            <label for="">Data de Termino</label>
-            <input type="date" class="form-control" formControlName="dataTer">
-            <div class="text-danger" *ngIf="form.dataTer.touched && form.dataTer.invalid">
-                <span *ngIf="form.dataTer.errors.required">
-                    Informe a data de termino
-                </span>
+        <div class="row mb-3">
+            <div class="col-md-3">
+                <label for="">Data de Termino</label>
+                <input type="date" class="form-control" formControlName="dataTer">
+                <div class="text-danger" *ngIf="form.dataTer.touched && form.dataTer.invalid">
+                    <span *ngIf="form.dataTer.errors.required">
+                        Informe a data de termino
+                    </span>
+                </div>
             </div>
         </div>
 
 
-        <div class="col-md-3">
-            <label for="">quantidade de alunos</label>
-            <input type="number" class="form-control" formControlName="quantidade">
-            <div class="text-danger" *ngIf="form.quantidade.touched && form.quantidade.invalid">
-                <span *ngIf="form.quantidade.errors.required">
-                    Informe a quantidade de alunos
-                </span>
+        <div class="row mb-3">
+            <div class="col-md-3">
+                <label for="">Quantidade de Alunos</label>
+                <input type="number" class="form-control" formControlName="quantidade">
+                <div class="text-danger" *ngIf="form.quantidade.touched && form.quantidade.invalid">
+                    <span *ngIf="form.quantidade.errors.required">
+                        Informe a quantidade de alunos
+                    </span>
+                </div>
             </div>
         </div>
 
-        <div class="col-md-3">
-            <label for="categoria">Categoria</label>
-            <select class="form-control" formControlName="categoria" id="categoria">
-              <option *ngFor="let categoria of categoria" value="{{categoria.idCategoria}}">{{categoria.categoria}}</option>
-            </select>
 
-            <div class="text-danger" *ngIf="form.categoria.touched && form.categoria.invalid">
-                <span *ngIf="form.categoria.errors.required">
-                    Informe a categoria
-                </span>
+        <div class="row mb-3">
+            <div class="col-md-3">
+                <label for="categoria">Categoria</label>
+                <select class="form-control" formControlName="categoria" id="categoria">
+                    <option *ngFor="let categoria of categoria" value="{{categoria.idCategoria}}">
+                        {{categoria.categoria}}
+                    </option>
+                </select>
+
+                <div class="text-danger" *ngIf="form.categoria.touched && form.categoria.invalid">
+                    <span *ngIf="form.categoria.errors.required">
+                        Informe a categoria
+                    </span>
+                </div>
             </div>
         </div>
     </div>
 
     <div class="row mb-3">
         <div class="col-md-12">
-            <input type="submit" [disabled]="!formCadastro.valid" class="btn btn-success" value="Realizar o Cadastro">
+            <input type="submit" [disabled]="!formCadastro.valid" class="btn btn-primary" value="Adicionar">
         </div>
     </div>
 </form>
+
+<div class="row mb-3">
+    <div class="col-md-12">
+        <input type="submit" class="btn btn-primary" routerLink="" value="retornar">
+    </div>
+</div>

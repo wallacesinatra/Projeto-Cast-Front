@@ -65,6 +65,7 @@ export class CadastrarCursoComponent implements OnInit {
           window.location.href = "/consultar-curso"
         },
         e => {
+          alert(e.error);
           this.mensagem = "Cadastro nao realizado";
           console.log(e);
         }

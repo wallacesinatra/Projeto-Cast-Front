@@ -21,50 +21,58 @@
             </div>
         </div>
 
-        <div class="col-md-3">
-            <label for="">Data de Inicio</label>
-            <input type="date" class="form-control" formControlName="dataIni">
-            <div class="text-danger" *ngIf="form.dataIni.touched && form.dataIni.invalid">
-                <span *ngIf="form.dataIni.errors.required">
-                    Informe a data de Inicio
-                </span>
+        <div class="row mb-3">
+            <div class="col-md-3">
+                <label for="">Data de Inicio</label>
+                <input type="date" class="form-control" formControlName="dataIni">
+                <div class="text-danger" *ngIf="form.dataIni.touched && form.dataIni.invalid">
+                    <span *ngIf="form.dataIni.errors.required">
+                        Informe a data de Inicio
+                    </span>
+                </div>
             </div>
         </div>
 
-        <div class="col-md-3">
-            <label for="">Data de Termino</label>
-            <input type="date" class="form-control" formControlName="dataTer">
-            <div class="text-danger" *ngIf="form.dataTer.touched && form.dataTer.invalid">
-                <span *ngIf="form.dataTer.errors.required">
-                    Informe a data de Termino
-                </span>
+        <div class="row mb-3">
+            <div class="col-md-3">
+                <label for="">Data de Termino</label>
+                <input type="date" class="form-control" formControlName="dataTer">
+                <div class="text-danger" *ngIf="form.dataTer.touched && form.dataTer.invalid">
+                    <span *ngIf="form.dataTer.errors.required">
+                        Informe a data de Termino
+                    </span>
+                </div>
             </div>
         </div>
 
 
-        <div class="col-md-3">
-            <label for="">quantidade de alunos</label>
-            <input type="text" class="form-control" formControlName="quantidade">
-            <div class="text-danger" *ngIf="form.quantidade.touched && form.quantidade.invalid">
-                <span *ngIf="form.quantidade.errors.required">
-                    Informe a quantidade de alunos
-                </span>
+        <div class="row mb-3">
+            <div class="col-md-3">
+                <label for="">quantidade de alunos</label>
+                <input type="text" class="form-control" formControlName="quantidade">
+                <div class="text-danger" *ngIf="form.quantidade.touched && form.quantidade.invalid">
+                    <span *ngIf="form.quantidade.errors.required">
+                        Informe a quantidade de alunos
+                    </span>
+                </div>
             </div>
         </div>
 
-        <div class="col-md-3">
-            <label for="">categoria</label>
-            <select class="form-control" formControlName="categoria" id="idCategoria">
-                <option value="1">Multiplataforma</option>
-                <option value="2">Banco de dados</option>
-                <option value="3">Metodologia</option>
-                <option value="4">Comportamento</option>
-                <option value="5">Comunicacao</option>
-              </select>
-            <div class="text-danger" *ngIf="form.categoria.touched && form.categoria.invalid">
-                <span *ngIf="form.categoria.errors.required">
-                    Informe a categoria
-                </span>
+        <div class="row mb-3">
+            <div class="col-md-3">
+                <label for="">categoria</label>
+                <select class="form-control" formControlName="categoria" id="idCategoria">
+                    <option value="1">Multiplataforma</option>
+                    <option value="2">Banco de dados</option>
+                    <option value="3">Metodologia</option>
+                    <option value="4">Comportamento</option>
+                    <option value="5">Comunicacao</option>
+                </select>
+                <div class="text-danger" *ngIf="form.categoria.touched && form.categoria.invalid">
+                    <span *ngIf="form.categoria.errors.required">
+                        Informe a categoria
+                    </span>
+                </div>
             </div>
         </div>
     </div>
@@ -75,3 +83,9 @@
         </div>
     </div>
 </form>
+
+<div class="row mb-3">
+    <div class="col-md-12">
+        <input type="submit" class="btn btn-primary" routerLink="" value="retornar">
+    </div>
+</div>
